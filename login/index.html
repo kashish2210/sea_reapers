@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Login - SEA-REAPERS</title>
+  <meta content="Login to SEA-REAPERS maritime awareness platform" name="description">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <link href="../css/quartermaster-85851c.webflow.shared.969ea1721.css" rel="stylesheet" type="text/css" crossorigin="anonymous">
+  <link href="../images/6825fdf67a9d3c11a29862bb_GM_Favicon.png" rel="shortcut icon" type="image/x-icon">
+  <link href="../images/6825fdfe41447dc2b2180a3f_QM_Webclip.png" rel="apple-touch-icon">
+  <style>
+    .nav_background { opacity: 0; }
+    
+    .auth-container {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #0a1628 0%, #1a2744 100%);
+      padding: 2rem;
+    }
+    
+    .auth-box {
+      background: rgba(26, 39, 68, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 3rem;
+      max-width: 450px;
+      width: 100%;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    }
+    
+    .auth-logo {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    
+    .auth-logo svg {
+      width: 200px;
+      height: auto;
+    }
+    
+    .auth-title {
+      color: #fff;
+      font-size: 2rem;
+      font-weight: 900;
+      text-align: center;
+      margin-bottom: 0.5rem;
+      letter-spacing: 1px;
+    }
+    
+    .auth-subtitle {
+      color: rgba(255, 255, 255, 0.6);
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 0.95rem;
+    }
+    
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    
+    .form-label {
+      display: block;
+      color: rgba(255, 255, 255, 0.9);
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+    }
+    
+    .form-input {
+      width: 100%;
+      padding: 0.875rem 1rem;
+      background: rgba(10, 22, 40, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 6px;
+      color: #fff;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+    
+    .form-input:focus {
+      outline: none;
+      border-color: #4a9eff;
+      background: rgba(10, 22, 40, 0.8);
+    }
+    
+    .form-input::placeholder {
+      color: rgba(255, 255, 255, 0.4);
+    }
+    
+    .forgot-password {
+      text-align: right;
+      margin-top: -0.5rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .forgot-password a {
+      color: #4a9eff;
+      text-decoration: none;
+      font-size: 0.875rem;
+      transition: color 0.3s ease;
+    }
+    
+    .forgot-password a:hover {
+      color: #6bb3ff;
+    }
+    
+    .auth-button {
+      width: 100%;
+      padding: 1rem;
+      background: #4a9eff;
+      border: none;
+      border-radius: 6px;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    .auth-button:hover {
+      background: #3a8eef;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(74, 158, 255, 0.3);
+    }
+    
+    .auth-divider {
+      text-align: center;
+      margin: 2rem 0;
+      color: rgba(255, 255, 255, 0.4);
+      position: relative;
+    }
+    
+    .auth-divider::before,
+    .auth-divider::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      width: 40%;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.1);
+    }
+    
+    .auth-divider::before { left: 0; }
+    .auth-divider::after { right: 0; }
+    
+    .auth-link {
+      text-align: center;
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.95rem;
+    }
+    
+    .auth-link a {
+      color: #4a9eff;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+    
+    .auth-link a:hover {
+      color: #6bb3ff;
+    }
+    
+    .back-home {
+      text-align: center;
+      margin-top: 1.5rem;
+    }
+    
+    .back-home a {
+      color: rgba(255, 255, 255, 0.6);
+      text-decoration: none;
+      font-size: 0.875rem;
+      transition: color 0.3s ease;
+    }
+    
+    .back-home a:hover {
+      color: rgba(255, 255, 255, 0.9);
+    }
+  </style>
+</head>
+<body class="u-theme-dark">
+  <div class="auth-container">
+    <div class="auth-box">
+      <div class="auth-logo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 280 40" fill="none">
+          <path d="M20 5C17.794 5 16 6.794 16 9C16 10.859 17.28 12.411 19 12.858V28.268C17.526 28.612 16.132 29.206 14.868 30H12V32H14.868C16.132 32.794 17.526 33.388 19 33.732V36H16V38H24V36H21V33.732C22.474 33.388 23.868 32.794 25.132 32H28V30H25.132C23.868 29.206 22.474 28.612 21 28.268V12.858C22.72 12.411 24 10.859 24 9C24 6.794 22.206 5 20 5ZM20 7C21.103 7 22 7.897 22 9C22 10.103 21.103 11 20 11C18.897 11 18 10.103 18 9C18 7.897 18.897 7 20 7ZM19 15L14 20V24L19 19V15ZM21 15V19L26 24V20L21 15Z" fill="#4a9eff"/>
+          <text x="45" y="27" font-family="Arial, sans-serif" font-size="20" font-weight="900" letter-spacing="2" fill="#fff">SEA-REAPERS</text>
+        </svg>
+      </div>
+      
+      <h1 class="auth-title">Welcome Back</h1>
+      <p class="auth-subtitle">Login to access your maritime surveillance dashboard</p>
+      
+      <form>
+        <div class="form-group">
+          <label class="form-label" for="email">Email Address</label>
+          <input class="form-input" type="email" id="email" name="email" placeholder="your@email.com" required>
+        </div>
+        
+        <div class="form-group">
+          <label class="form-label" for="password">Password</label>
+          <input class="form-input" type="password" id="password" name="password" placeholder="Enter your password" required>
+        </div>
+        
+        <div class="forgot-password">
+          <a href="#">Forgot Password?</a>
+        </div>
+        
+        <button type="submit" class="auth-button">Login</button>
+      </form>
+      
+      <div class="auth-divider">OR</div>
+      
+      <p class="auth-link">
+        Don't have an account? <a href="/signup/">Sign Up</a>
+      </p>
+      
+      <div class="back-home">
+        <a href="/">← Back to Home</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
